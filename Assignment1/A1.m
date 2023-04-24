@@ -1,0 +1,10 @@
+im = imread('medical_image.jpg');
+im_gray = rgb2gray(im);
+imwrite (im_gray, 'medical_image_gray.jpg');
+J = imadjust(im_gray,[0 0.2], [0.5 1]);
+%figure, imshow(J);
+figure, imhist(im_gray);
+figure, imhist(J);
+imeq = histeq(J);
+figure, imhist(imeq);
+figure, imshow(imeq);
